@@ -1,2 +1,3 @@
 ph_api/node_modules/
 ph_fe/node_modules/
+.env
