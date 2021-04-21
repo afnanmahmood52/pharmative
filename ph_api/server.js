@@ -2,7 +2,7 @@ require("dotenv").config({path: '../.env'});
 const cors = require('cors')
 const express = require('express')
 const app = express()
-//const db = require('./db/db.config')
+const db = require('./configurations/db.config')
 
 app.use(cors())
 app.use(express.json());       // to support JSON-encoded bodies
@@ -25,13 +25,13 @@ get('/', (req, res) => {
 
 
 
-// db.authenticate()
-// .then(()=>{
-//   console.log("successfully connected to db")
-// })
-// .catch((error)=>{
-//   console.log("error connecting to db")
-// })
+db.authenticate()
+.then(()=>{
+  console.log("successfully connected to db")
+})
+.catch((error)=>{
+  console.log("error connecting to db")
+})
 
 
 app.listen(port, api_url, () => {
